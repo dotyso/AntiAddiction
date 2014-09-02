@@ -1,0 +1,289 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+    		android:layout_height="match_parent"
+        >
+	    <Switch
+	        android:id="@+id/switch1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginTop="20dp"
+	        android:checked="true"
+	        android:text="日常设置"
+	        android:textSize="15dp" />
+	
+	    <TextView
+	        android:id="@+id/textView11"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/switch1"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="40dp"
+	        android:text="周"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox111"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/textView11"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="20dp"
+	        android:checked="true"
+	        android:text="周一"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox112"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/CheckBox111"
+	        android:layout_alignBottom="@+id/CheckBox111"
+	        android:layout_toRightOf="@+id/CheckBox111"
+	        android:checked="true"
+	        android:text="周二"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox113"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/CheckBox112"
+	        android:layout_alignBottom="@+id/CheckBox112"
+	        android:layout_toRightOf="@+id/CheckBox112"
+	        android:checked="true"
+	        android:text="周三"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox114"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/CheckBox113"
+	        android:layout_alignBottom="@+id/CheckBox113"
+	        android:layout_toRightOf="@+id/CheckBox113"
+	        android:checked="true"
+	        android:text="周四"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/checkBox115"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/CheckBox114"
+	        android:layout_alignBottom="@+id/CheckBox114"
+	        android:layout_toRightOf="@+id/CheckBox114"
+	        android:checked="true"
+	        android:text="周五"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox116"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/CheckBox111"
+	        android:layout_alignTop="@+id/CheckBox111"
+	        android:layout_marginTop="30dp"
+	        android:checked="true"
+	        android:text="周六"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox117"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/CheckBox116"
+	        android:layout_alignBottom="@+id/CheckBox116"
+	        android:layout_toRightOf="@+id/CheckBox116"
+	        android:checked="true"
+	        android:text="周日"
+	        android:textSize="12dp" />
+	
+	    <TextView
+	        android:id="@+id/textView12"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/CheckBox116"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="40dp"
+	        android:text="行为"
+	        android:textSize="12dp" />
+
+	    <RadioGroup
+	        android:id="@+id/radioGroup1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/textView12"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="20dp"
+	        android:orientation="horizontal"
+	         >
+	
+	        <RadioButton
+	            android:id="@+id/radioButton121"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignParentTop="true"
+	            android:checked="true"
+	            android:text="弹出警告"
+	            android:textSize="12dp" />
+	        
+		    <RadioButton
+		        android:id="@+id/radioButton122"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+
+		        android:text="自动锁屏"
+		        android:textSize="12dp" />
+		    	        
+	    </RadioGroup>
+
+
+	    <Switch
+	        android:id="@+id/switch2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/radioGroup1"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginTop="60dp"
+	        android:checked="true"
+	        android:text="特殊时间段设置一"
+	        android:textSize="15dp" />
+	
+	    <TextView
+	        android:id="@+id/textView21"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/switch2"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="40dp"
+	        android:text="周"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox211"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/textView21"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="20dp"
+	        android:checked="true"
+	        android:text="周一"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox212"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/CheckBox211"
+	        android:layout_alignBottom="@+id/CheckBox211"
+	        android:layout_toRightOf="@+id/CheckBox211"
+	        android:checked="true"
+	        android:text="周二"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox213"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/CheckBox212"
+	        android:layout_alignBottom="@+id/CheckBox212"
+	        android:layout_toRightOf="@+id/CheckBox212"
+	        android:checked="true"
+	        android:text="周三"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox214"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/CheckBox213"
+	        android:layout_alignBottom="@+id/CheckBox213"
+	        android:layout_toRightOf="@+id/CheckBox213"
+	        android:checked="true"
+	        android:text="周四"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox215"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/CheckBox214"
+	        android:layout_alignBottom="@+id/CheckBox214"
+	        android:layout_toRightOf="@+id/CheckBox214"
+	        android:checked="true"
+	        android:text="周五"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox216"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/CheckBox211"
+	        android:layout_alignTop="@+id/CheckBox211"
+	        android:layout_marginTop="30dp"
+	        android:checked="true"
+	        android:text="周六"
+	        android:textSize="12dp" />
+	
+	    <CheckBox
+	        android:id="@+id/CheckBox217"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/CheckBox216"
+	        android:layout_alignBottom="@+id/CheckBox216"
+	        android:layout_toRightOf="@+id/CheckBox216"
+	        android:checked="true"
+	        android:text="周日"
+	        android:textSize="12dp" />
+	
+	    <TextView
+	        android:id="@+id/textView22"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/CheckBox216"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="40dp"
+	        android:text="行为"
+	        android:textSize="12dp" />
+
+	    <RadioGroup
+	        android:id="@+id/radioGroup2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/textView22"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="20dp"
+	        android:orientation="horizontal"
+	         >
+	
+	        <RadioButton
+	            android:id="@+id/radioButton221"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignParentTop="true"
+	            android:checked="true"
+	            android:text="弹出警告"
+	            android:textSize="12dp" />
+	        
+		    <RadioButton
+		        android:id="@+id/radioButton222"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+
+		        android:text="自动锁屏"
+		        android:textSize="12dp" />
+		    	        
+	    </RadioGroup>
+	    
+	</RelativeLayout>
+</ScrollView>

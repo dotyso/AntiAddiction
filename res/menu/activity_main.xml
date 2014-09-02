@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+     <item  
+        android:id="@+id/save_menuitem"  
+        android:showAsAction="always"  
+        android:title="保存设置"/> 
+        
+ <item  
+        android:id="@+id/about_menuitem"  
+        android:showAsAction="never"  
+        android:title="关于和反馈"/> 
+
+</menu>

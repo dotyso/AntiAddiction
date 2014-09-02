@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutActivity" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/divino" />
+
+    <Button
+        android:id="@+id/feedbackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
+        android:background="#ff6600"
+        android:padding="10dp"  
+		android:textSize="16dp"
+		android:textColor="#ffffff"
+        android:text="　　　　填写反馈　　　　" />
+
+		<TextView
+		    android:id="@+id/authortextView"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/imageView1"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="20dp"
+		    android:text="yang, shuai"
+		    android:textAlignment="center"
+		    android:textSize="13dp" />
+
+		<TextView
+		    android:id="@+id/emailtextView"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/authortextView"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="5dp"
+		    android:text="divino@163.com"
+		    android:textAlignment="center"
+		    android:textSize="13dp" />
+		
+
+
+        
+</RelativeLayout>
