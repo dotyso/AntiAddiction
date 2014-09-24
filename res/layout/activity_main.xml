@@ -7,283 +7,322 @@
     <RelativeLayout
             android:layout_width="match_parent"
     		android:layout_height="match_parent"
+			android:focusable="true"
+			android:focusableInTouchMode="true"
         >
+        
+
+
 	    <Switch
-	        android:id="@+id/switch1"
+	        android:id="@+id/switchNormal"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentTop="true"
 	        android:layout_marginLeft="20dp"
 	        android:layout_marginTop="20dp"
 	        android:checked="true"
-	        android:text="日常设置"
-	        android:textSize="15dp" />
+	        android:text="日常使用设置"
+	        android:textSize="17dp" />
 	
 	    <TextView
-	        android:id="@+id/textView11"
+	        android:id="@+id/textViewNormal"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignTop="@+id/switch1"
-	        android:layout_marginLeft="30dp"
-	        android:layout_marginTop="40dp"
-	        android:text="周"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox111"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignTop="@+id/textView11"
-	        android:layout_marginLeft="30dp"
-	        android:layout_marginTop="20dp"
-	        android:checked="true"
-	        android:text="周一"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox112"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/CheckBox111"
-	        android:layout_alignBottom="@+id/CheckBox111"
-	        android:layout_toRightOf="@+id/CheckBox111"
-	        android:checked="true"
-	        android:text="周二"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox113"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/CheckBox112"
-	        android:layout_alignBottom="@+id/CheckBox112"
-	        android:layout_toRightOf="@+id/CheckBox112"
-	        android:checked="true"
-	        android:text="周三"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox114"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/CheckBox113"
-	        android:layout_alignBottom="@+id/CheckBox113"
-	        android:layout_toRightOf="@+id/CheckBox113"
-	        android:checked="true"
-	        android:text="周四"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/checkBox115"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/CheckBox114"
-	        android:layout_alignBottom="@+id/CheckBox114"
-	        android:layout_toRightOf="@+id/CheckBox114"
-	        android:checked="true"
-	        android:text="周五"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox116"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/CheckBox111"
-	        android:layout_alignTop="@+id/CheckBox111"
-	        android:layout_marginTop="30dp"
-	        android:checked="true"
-	        android:text="周六"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox117"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/CheckBox116"
-	        android:layout_alignBottom="@+id/CheckBox116"
-	        android:layout_toRightOf="@+id/CheckBox116"
-	        android:checked="true"
-	        android:text="周日"
-	        android:textSize="12dp" />
-	
-	    <TextView
-	        android:id="@+id/textView12"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignTop="@+id/CheckBox116"
-	        android:layout_marginLeft="30dp"
-	        android:layout_marginTop="40dp"
-	        android:text="行为"
-	        android:textSize="12dp" />
-
-	    <RadioGroup
-	        android:id="@+id/radioGroup1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignTop="@+id/textView12"
-	        android:layout_marginLeft="30dp"
-	        android:layout_marginTop="20dp"
-	        android:orientation="horizontal"
-	         >
-	
-	        <RadioButton
-	            android:id="@+id/radioButton121"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_alignParentLeft="true"
-	            android:layout_alignParentTop="true"
-	            android:checked="true"
-	            android:text="弹出警告"
-	            android:textSize="12dp" />
-	        
-		    <RadioButton
-		        android:id="@+id/radioButton122"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-
-		        android:text="自动锁屏"
-		        android:textSize="12dp" />
-		    	        
-	    </RadioGroup>
-
-
-	    <Switch
-	        android:id="@+id/switch2"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignTop="@+id/radioGroup1"
+	        android:layout_below="@+id/switchNormal"
+	        android:layout_marginTop="10dp"	        
 	        android:layout_marginLeft="20dp"
-	        android:layout_marginTop="60dp"
-	        android:checked="true"
-	        android:text="特殊时间段设置一"
-	        android:textSize="15dp" />
-	
-	    <TextView
-	        android:id="@+id/textView21"
+	        android:text="当日常使用手机超过"
+	        android:textSize="14dp" />
+	    
+	    <EditText
+	        android:id="@+id/textBoxNormalExceed"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignTop="@+id/switch2"
-	        android:layout_marginLeft="30dp"
-	        android:layout_marginTop="40dp"
-	        android:text="周"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox211"
+	        android:layout_toRightOf="@+id/textViewNormal"
+	        android:layout_alignBaseline="@+id/textViewNormal"	        
+	        android:text="30"
+	        android:ems="3"
+	        android:inputType="number"	        
+	        android:textSize="14dp" />	   
+	        
+		<TextView
+	        android:id="@+id/textViewNormal1x"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignTop="@+id/textView21"
-	        android:layout_marginLeft="30dp"
-	        android:layout_marginTop="20dp"
-	        android:checked="true"
-	        android:text="周一"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox212"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/CheckBox211"
-	        android:layout_alignBottom="@+id/CheckBox211"
-	        android:layout_toRightOf="@+id/CheckBox211"
-	        android:checked="true"
-	        android:text="周二"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox213"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/CheckBox212"
-	        android:layout_alignBottom="@+id/CheckBox212"
-	        android:layout_toRightOf="@+id/CheckBox212"
-	        android:checked="true"
-	        android:text="周三"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox214"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/CheckBox213"
-	        android:layout_alignBottom="@+id/CheckBox213"
-	        android:layout_toRightOf="@+id/CheckBox213"
-	        android:checked="true"
-	        android:text="周四"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox215"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/CheckBox214"
-	        android:layout_alignBottom="@+id/CheckBox214"
-	        android:layout_toRightOf="@+id/CheckBox214"
-	        android:checked="true"
-	        android:text="周五"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox216"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/CheckBox211"
-	        android:layout_alignTop="@+id/CheckBox211"
-	        android:layout_marginTop="30dp"
-	        android:checked="true"
-	        android:text="周六"
-	        android:textSize="12dp" />
-	
-	    <CheckBox
-	        android:id="@+id/CheckBox217"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/CheckBox216"
-	        android:layout_alignBottom="@+id/CheckBox216"
-	        android:layout_toRightOf="@+id/CheckBox216"
-	        android:checked="true"
-	        android:text="周日"
-	        android:textSize="12dp" />
-	
-	    <TextView
-	        android:id="@+id/textView22"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignTop="@+id/CheckBox216"
-	        android:layout_marginLeft="30dp"
-	        android:layout_marginTop="40dp"
-	        android:text="行为"
-	        android:textSize="12dp" />
-
+	        android:layout_toRightOf="@+id/textBoxNormalExceed"
+	        android:layout_alignBaseline="@+id/textBoxNormalExceed"
+	        android:text="分钟"
+	        android:textSize="14dp" />	    
+			    
 	    <RadioGroup
-	        android:id="@+id/radioGroup2"
+	        android:id="@+id/radioGroupNormal"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignTop="@+id/textView22"
-	        android:layout_marginLeft="30dp"
-	        android:layout_marginTop="20dp"
-	        android:orientation="horizontal"
-	         >
-	
+	        android:layout_below="@+id/textViewNormal"
+	        android:layout_marginTop="10dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginLeft="10dp"
+	        android:orientation="horizontal" >
+
 	        <RadioButton
-	            android:id="@+id/radioButton221"
+	            android:id="@+id/radioButtonNormalForbid1M"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_alignParentLeft="true"
 	            android:layout_alignParentTop="true"
 	            android:checked="true"
-	            android:text="弹出警告"
-	            android:textSize="12dp" />
+	            android:text="禁用1分钟"
+	            android:textSize="14dp" />
+
+	        <RadioButton
+	            android:id="@+id/radioButtonNormalForbid10M"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="禁用10分钟"
+	            android:textSize="14dp" />
+	    </RadioGroup>
+	   
+	    <Switch
+	        android:id="@+id/switchSpecial1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/radioGroupNormal"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginTop="70dp"
+	        android:checked="true"
+	        android:text="时间段1 设置"
+	        android:textSize="17dp" />
+	
+	    
+	    <TextView
+	        android:id="@+id/textViewSpecial1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/switchSpecial1"
+	        android:layout_marginTop="10dp"	        
+	        android:layout_marginLeft="20dp"
+	        android:text="在"
+	        android:textSize="14dp" />
+	    
+	    <EditText
+	        android:id="@+id/textBoxSpecial1Begin"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/textViewSpecial1"
+	        android:layout_alignBaseline="@+id/textViewSpecial1"	        
+	        android:text="22"
+	        android:ems="3"
+	        android:inputType="number"	        
+	        android:textSize="14dp" />
+	    
+		<TextView
+	        android:id="@+id/textViewSpecial1x"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/textBoxSpecial1Begin"
+	        android:layout_alignBaseline="@+id/textBoxSpecial1Begin"
+	        android:text="时 到"
+	        android:textSize="14dp" />
+	    
+	        
+		<EditText
+	        android:id="@+id/textBoxSpecial1To"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/textViewSpecial1x"
+	        android:layout_alignBaseline="@+id/textViewSpecial1x"
+	        android:text="6"
+	        android:ems="3"
+	        android:inputType="number"	  
+	        android:textSize="14dp" />
+		
+		<TextView
+	        android:id="@+id/textViewSpecial1xx"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/textBoxSpecial1To"
+	        android:layout_alignBaseline="@+id/textBoxSpecial1To"
+	        android:text="时使用超过"
+	        android:textSize="14dp" />
+		
+	    <EditText
+	        android:id="@+id/textBoxSpecial1Exceed"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/textViewSpecial1xx"
+	        android:layout_alignBaseline="@+id/textViewSpecial1xx"	        
+	        android:text="15"
+	        android:ems="3"
+	        android:inputType="number"	        
+	        android:textSize="14dp" />	   
+	        
+		<TextView
+	        android:id="@+id/textViewSpecial1xxx"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/textBoxSpecial1Exceed"
+	        android:layout_alignBaseline="@+id/textBoxSpecial1Exceed"
+	        android:text="分钟"
+	        android:textSize="14dp" />			
+	    	    
+	    <RadioGroup
+	        android:id="@+id/radioGroupSpecial1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textViewSpecial1"
+	        android:layout_marginTop="10dp"	        
+	        android:layout_marginLeft="10dp"
+	        android:orientation="horizontal"
+	         >
+	
+	        <RadioButton
+	            android:id="@+id/radioButtonSpecial1Forbid1M"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignParentTop="true"
+	            android:checked="true"
+	            android:text="禁用1分钟"
+	            android:textSize="14dp" />
 	        
 		    <RadioButton
-		        android:id="@+id/radioButton222"
+		        android:id="@+id/radioButtonSpecial1Forbid10M"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 
-		        android:text="自动锁屏"
-		        android:textSize="12dp" />
+		        android:text="禁用10分钟"
+		        android:textSize="14dp" />
 		    	        
 	    </RadioGroup>
 	    
+	    <Switch
+	        android:id="@+id/switchSpecial2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/radioGroupSpecial1"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginTop="70dp"
+	        android:checked="true"
+	        android:text="时间段2 设置"
+	        android:textSize="17dp" />
+	
+	    
+	    <TextView
+	        android:id="@+id/textViewSpecial2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/switchSpecial2"
+	        android:layout_marginTop="10dp"	        
+	        android:layout_marginLeft="20dp"
+	        android:text="在"
+	        android:textSize="14dp" />
+	    
+	    <EditText
+	        android:id="@+id/textBoxSpecial2Begin"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/textViewSpecial2"
+	        android:layout_alignBaseline="@+id/textViewSpecial2"	        
+	        android:text="22"
+	        android:ems="3"
+	        android:inputType="number"	        
+	        android:textSize="14dp" />
+	    
+		<TextView
+	        android:id="@+id/textViewSpecial2x"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/textBoxSpecial2Begin"
+	        android:layout_alignBaseline="@+id/textBoxSpecial2Begin"
+	        android:text="时 到"
+	        android:textSize="14dp" />
+	    
+	        
+		<EditText
+	        android:id="@+id/textBoxSpecial2To"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/textViewSpecial2x"
+	        android:layout_alignBaseline="@+id/textViewSpecial2x"
+	        android:text="6"
+	        android:ems="3"
+	        android:inputType="number"	  
+	        android:textSize="14dp" />
+		
+		<TextView
+	        android:id="@+id/textViewSpecial2xx"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/textBoxSpecial2To"
+	        android:layout_alignBaseline="@+id/textBoxSpecial2To"
+	        android:text="时使用超过"
+	        android:textSize="14dp" />
+		
+	    <EditText
+	        android:id="@+id/textBoxSpecial2Exceed"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/textViewSpecial2xx"
+	        android:layout_alignBaseline="@+id/textViewSpecial2xx"	        
+	        android:text="15"
+	        android:ems="3"
+	        android:inputType="number"	        
+	        android:textSize="14dp" />	   
+	        
+		<TextView
+	        android:id="@+id/textViewSpecial2xxx"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/textBoxSpecial2Exceed"
+	        android:layout_alignBaseline="@+id/textBoxSpecial2Exceed"
+	        android:text="分钟"
+	        android:textSize="14dp" />			
+	    	    
+	    <RadioGroup
+	        android:id="@+id/radioGroupSpecial2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textViewSpecial2"
+	        android:layout_marginTop="10dp"	        
+	        android:layout_marginLeft="10dp"
+	        android:orientation="horizontal"
+	         >
+	
+	        <RadioButton
+	            android:id="@+id/radioButtonSpecial2Forbid1M"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignParentTop="true"
+	            android:checked="true"
+	            android:text="禁用1分钟"
+	            android:textSize="14dp" />
+	        
+		    <RadioButton
+		        android:id="@+id/radioButtonSpecial2Forbid10M"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+
+		        android:text="禁用10分钟"
+		        android:textSize="14dp" />
+		    	        
+	    </RadioGroup>
+	    
+	    <Button
+        android:id="@+id/okButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroupSpecial2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"        
+        android:layout_marginTop="30dp"
+        android:background="#3399cc"
+        android:padding="5dp"  
+		android:textSize="15dp"
+		android:textColor="#ffffff"
+        android:text="　　保存并启动服务　　" />
+	    	
 	</RelativeLayout>
+	
+
 </ScrollView>

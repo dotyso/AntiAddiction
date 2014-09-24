@@ -1,35 +1,43 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".AlertActivity" >
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:padding="20dp"
-        android:text="提醒您使用手机时间过长" />
+        android:text="提醒您使用手机时间过长"
+        android:textSize="18dp"
+         />
 
-    <Button
-        android:id="@+id/buttonLater"
+    <RelativeLayout
+		android:id="@+id/adcontainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/buttonOk"
-        android:layout_alignBottom="@+id/buttonOk"
-        android:layout_toLeftOf="@+id/buttonOk"
-        android:text="15分钟内不再提示" />
-
+		android:layout_centerHorizontal="true"       
+		android:layout_below="@+id/textView1" 
+        android:layout_marginTop="10dp"		
+        >
+        
+    </RelativeLayout>
+    
     <Button
         android:id="@+id/buttonOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+		android:layout_below="@+id/adcontainer" 
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="28dp"
-        android:layout_marginRight="14dp"
-        android:text="知道了" />
+        android:layout_marginBottom="20dp"
+		android:layout_marginTop="20dp"       
+        android:layout_marginLeft="15dp"        
+        android:layout_marginRight="20dp"
+        android:text="" />
 
+   
 </RelativeLayout>
