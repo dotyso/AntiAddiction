@@ -5,9 +5,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import cn.domob.android.ads.DomobAdEventListener;
-import cn.domob.android.ads.DomobAdView;
-import cn.domob.android.ads.DomobAdManager.ErrorCode;
+import net.youmi.android.AdManager;
+import net.youmi.android.banner.AdSize;
+import net.youmi.android.banner.AdView;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -34,20 +34,21 @@ public class AntiAddictionService extends Service {
 	
 	private Handler mPeriodicEventHandler;  
 	private Context mContext = this;
-    private final int PERIODIC_EVENT_TIMEOUT = 1000 * 60;  
+    private final int PERIODIC_EVENT_TIMEOUT = 1000 * 60 * 2;  
     private Date mScreenOnTime = new Date();
     private Boolean mIsScreenOn = false;    
     private Boolean mIsAlertShow = false;
     
-	private String PUBLISHER_ID = "56OJwEL4uN8w3fs+1u";
-	private String InlinePPID = "16TLuVClAp2cHNU066X9aU-s";
+	private String PUBLISHER_ID = "f8daf9f0160691a7";
+	private String InlinePPID = "1c9d0b2264b42f16";
 
     //接收屏幕状态
     private final BroadcastReceiver screenStatusReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
         	
-        	if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
+        	//if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
+        	if (intent.getAction().equals(Intent.ACTION_USER_PRESENT)) {
 	        	mScreenOnTime = new Date();
 	        	mIsScreenOn = true;
         	}
@@ -107,7 +108,7 @@ public class AntiAddictionService extends Service {
         	
         	
         	//输出LOG
-			Toast.makeText(mContext, "轮询手机防沉迷卫士" + currentTime, Toast.LENGTH_LONG).show();
+			//Toast.makeText(mContext, "轮询手机防沉迷卫士" + currentTime, Toast.LENGTH_LONG).show();
 			Log.i("手机防沉迷卫士", "轮询手机防沉迷卫士" + currentTime);
 			
 			//等待下一次执行
@@ -174,63 +175,14 @@ public class AntiAddictionService extends Service {
     	});
 		
 		
-		//多盟广告
+		//广告
 
 		RelativeLayout mDialogAdContainer = (RelativeLayout)layout.findViewById(R.id.adcontainer);
-		DomobAdView mDialogAdview = new DomobAdView(mContext, PUBLISHER_ID, InlinePPID);
-		mDialogAdview.setAdEventListener(new DomobAdEventListener(){
-
-			@Override
-			public void onDomobAdClicked(DomobAdView arg0) {
-				// TODO Auto-generated method stub
-				Toast.makeText(mContext, "onDomobAdClicked", Toast.LENGTH_LONG);
-			}
-
-			@Override
-			public void onDomobAdFailed(DomobAdView arg0, ErrorCode arg1) {
-				// TODO Auto-generated method stub
-				Toast.makeText(mContext, "onDomobAdFailed", Toast.LENGTH_LONG);			
-			}
-
-			@Override
-			public void onDomobAdOverlayDismissed(DomobAdView arg0) {
-				// TODO Auto-generated method stub
-				Toast.makeText(mContext, "onDomobAdOverlayDismissed", Toast.LENGTH_LONG);	
-			}
-
-			@Override
-			public void onDomobAdOverlayPresented(DomobAdView arg0) {
-				// TODO Auto-generated method stub
-				Toast.makeText(mContext, "onDomobAdOverlayPresented", Toast.LENGTH_LONG);
-			}
-
-			@Override
-			public Context onDomobAdRequiresCurrentContext() {
-				// TODO Auto-generated method stub
-				Toast.makeText(mContext, "onDomobAdRequiresCurrentContext", Toast.LENGTH_LONG);
-				return null;
-			}
-
-			@Override
-			public void onDomobAdReturned(DomobAdView arg0) {
-				// TODO Auto-generated method stub
-				Toast.makeText(mContext, "onDomobAdReturned", Toast.LENGTH_LONG);
-			}
-
-			@Override
-			public void onDomobLeaveApplication(DomobAdView arg0) {
-				// TODO Auto-generated method stub
-				Toast.makeText(mContext, "onDomobLeaveApplication", Toast.LENGTH_LONG);
-			}
-
-			
-			
-		});
-		RelativeLayout.LayoutParams adLayout = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-		adLayout.addRule(RelativeLayout.CENTER_HORIZONTAL);
-		mDialogAdview.setLayoutParams(adLayout);
-		mDialogAdview.setAdSize(DomobAdView.INLINE_SIZE_FLEXIBLE);
-		mDialogAdContainer.addView(mDialogAdview);
+		
+		AdManager.getInstance(this).init(PUBLISHER_ID, InlinePPID, false);
+		AdView adView = new AdView(this, AdSize.FIT_SCREEN);
+		mDialogAdContainer.addView(adView);
+		
 		
 		dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
     	dialog.show();

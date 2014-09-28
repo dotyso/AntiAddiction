@@ -63,15 +63,25 @@ public class MainActivity extends Activity {
 	Button.OnClickListener okButtonOnClick = new Button.OnClickListener(){
 		@Override
 		public void onClick(View v) {
+
+			int[] editBoxExceedIds = new int[3];
+			editBoxExceedIds[0] = R.id.textBoxNormalExceed;
+			editBoxExceedIds[1] = R.id.textBoxSpecial1Exceed;
+			editBoxExceedIds[2] = R.id.textBoxSpecial2Exceed;
 			
-			int[] editBoxIds = new int[4];
-			editBoxIds[0] = R.id.textBoxSpecial1Begin;
-			editBoxIds[1] = R.id.textBoxSpecial1To;
-			editBoxIds[2] = R.id.textBoxSpecial2Begin;
-			editBoxIds[3] = R.id.textBoxSpecial2To;
+			if (!checkExceed(editBoxExceedIds)) {
+				Toast.makeText(mContext, "超时时间必须不于5分钟", Toast.LENGTH_LONG).show();
+				return;
+			}
 			
-			if (!checkSetting(editBoxIds)) {
-				Toast.makeText(mContext, "时间必须大于0小于24", Toast.LENGTH_LONG).show();
+			int[] editBoxFromToIds = new int[4];
+			editBoxFromToIds[0] = R.id.textBoxSpecial1Begin;
+			editBoxFromToIds[1] = R.id.textBoxSpecial1To;
+			editBoxFromToIds[2] = R.id.textBoxSpecial2Begin;
+			editBoxFromToIds[3] = R.id.textBoxSpecial2To;
+			
+			if (!checkFromTo(editBoxFromToIds)) {
+				Toast.makeText(mContext, "时间范围必须在0至24时之间", Toast.LENGTH_LONG).show();
 				return;
 			}
 			
@@ -81,7 +91,8 @@ public class MainActivity extends Activity {
 			settings.add(readPeriodSettingControl(2, R.id.switchSpecial2, R.id.textBoxSpecial2Begin, R.id.textBoxSpecial2To, R.id.textBoxSpecial2Exceed, R.id.radioButtonSpecial2Forbid1M));
 			
 	    	PeriodSettingManager.getInstance().savePeriodSetting(settings);
-			
+	    	PeriodSettingManager.getInstance().UpdateCachePeriodSetting();
+	    	
 	    	Intent serviceIntent = new Intent(data.mContext, AntiAddictionService.class);  
 			startService(serviceIntent);
 			
@@ -90,10 +101,21 @@ public class MainActivity extends Activity {
 		}
 	};
 	
-	private boolean checkSetting(int[] editBoxIds) {
+	private boolean checkExceed(int[] editBoxIds) {
 		
 		for (int editBoxId : editBoxIds) {
-			int hour = Integer.parseInt(((EditText)findViewById(editBoxId)).getText().toString());
+			int hour = Integer.parseInt(((EditText)findViewById(editBoxId)).getText().toString().trim());
+			if (hour < 5)
+				return false;
+		}
+		
+		return true;
+	}
+	
+	private boolean checkFromTo(int[] editBoxIds) {
+		
+		for (int editBoxId : editBoxIds) {
+			int hour = Integer.parseInt(((EditText)findViewById(editBoxId)).getText().toString().trim());
 			if (hour < 0 || hour > 24)
 				return false;
 		}

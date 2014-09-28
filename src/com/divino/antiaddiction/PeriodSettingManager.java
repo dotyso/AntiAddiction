@@ -16,6 +16,7 @@ import com.google.gson.reflect.TypeToken;
 public class PeriodSettingManager {
 	
 	
+	private List<PeriodSetting> mPeriodSettings = null;
 	
 	private static PeriodSettingManager mPeriodSettingManager;
 	
@@ -28,8 +29,17 @@ public class PeriodSettingManager {
 		
 	}
 	
+	public void UpdateCachePeriodSetting() {
+		mPeriodSettings = PeriodSettingManager.getInstance().getPeriodSetting();
+	}
+	
+	
 	public PeriodSetting checkHit(Date currentDate) {
-		List<PeriodSetting> periodSettings = PeriodSettingManager.getInstance().getPeriodSetting();
+		
+		if (mPeriodSettings == null) {
+			mPeriodSettings = PeriodSettingManager.getInstance().getPeriodSetting();
+		}
+		List<PeriodSetting> periodSettings = mPeriodSettings;
 		
 		//倒序找到满足条件的设置
 		PeriodSetting hitPeriodSetting = null;
@@ -63,8 +73,8 @@ public class PeriodSettingManager {
 	
 	public void initPeriodSetting() {
 		List<PeriodSetting> settings = new ArrayList<PeriodSetting>();
-		settings.add(new PeriodSetting(true, true, new boolean[]{true, true, true, true, true, true, true}, 0, 24, 30, 1));
-		settings.add(new PeriodSetting(false, true, new boolean[]{true, true, true, true, true, true, true}, 21, 7, 15, 2));				
+		settings.add(new PeriodSetting(true, true, new boolean[]{true, true, true, true, true, true, true}, 0, 24, 20, 1));
+		settings.add(new PeriodSetting(false, true, new boolean[]{true, true, true, true, true, true, true}, 23, 6, 10, 2));				
 		settings.add(new PeriodSetting(false, false, new boolean[]{true, true, true, true, true, true, true}, 0, 24, 15, 2));				
 	
     	Type type = new TypeToken<List<PeriodSetting>>(){}.getType();

@@ -9,8 +9,17 @@
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+	<uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,6 +28,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+	 -->
 
     <application
         android:name="com.divino.antiaddiction.ContextUtil"            
@@ -52,17 +62,21 @@
             android:name="com.divino.antiaddiction.AboutActivity"
             android:label="@string/title_activity_about" >
         </activity>
-        <activity
-            android:name="com.divino.antiaddiction.AlertActivity"
-            android:label="@string/title_activity_alert"
-            android:theme="@android:style/Theme.Dialog" >
-        </activity>
-
-        <activity
-            android:name="com.divino.antiaddiction.AlertDialog"
-            android:label="@string/title_activity_alert_dialog"
-             >
-        </activity>
+       
+        <service
+		    android:name="net.youmi.android.AdService"
+		    android:exported="false" >
+		</service>
+		<receiver
+		    android:name="net.youmi.android.AdReceiver" >
+		    <intent-filter>
+		        <action android:name="android.intent.action.PACKAGE_ADDED" />
+		        <data android:scheme="package" />
+		    </intent-filter>
+		</receiver>
+		<provider
+		    android:name="net.youmi.android.spot.SpotAdContentProvider"
+		    android:authorities="com.youandroidmi" />
     </application>
 
 </manifest>
