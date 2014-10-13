@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
 			editBoxExceedIds[2] = R.id.textBoxSpecial2Exceed;
 			
 			if (!checkExceed(editBoxExceedIds)) {
-				Toast.makeText(mContext, "超时时间必须不于5分钟", Toast.LENGTH_LONG).show();
+				Toast.makeText(mContext, "超时时间必须不于2分钟", Toast.LENGTH_LONG).show();
 				return;
 			}
 			
@@ -104,8 +104,8 @@ public class MainActivity extends Activity {
 	private boolean checkExceed(int[] editBoxIds) {
 		
 		for (int editBoxId : editBoxIds) {
-			int hour = Integer.parseInt(((EditText)findViewById(editBoxId)).getText().toString().trim());
-			if (hour < 5)
+			int min = Integer.parseInt(((EditText)findViewById(editBoxId)).getText().toString().trim());
+			if (min < 2)
 				return false;
 		}
 		

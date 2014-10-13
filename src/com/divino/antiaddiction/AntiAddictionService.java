@@ -34,7 +34,7 @@ public class AntiAddictionService extends Service {
 	
 	private Handler mPeriodicEventHandler;  
 	private Context mContext = this;
-    private final int PERIODIC_EVENT_TIMEOUT = 1000 * 60 * 2;  
+    private final int PERIODIC_EVENT_TIMEOUT = 1000 * 60 * 1;  
     private Date mScreenOnTime = new Date();
     private Boolean mIsScreenOn = false;    
     private Boolean mIsAlertShow = false;
@@ -72,10 +72,16 @@ public class AntiAddictionService extends Service {
       mPeriodicEventHandler.postDelayed(doPeriodicTask, PERIODIC_EVENT_TIMEOUT);  
     }  
     
+    @Override  
+    public int onStartCommand(Intent intent, int flags, int startId) {  
+        flags = START_STICKY;  
+        return super.onStartCommand(intent, flags, startId);  
+    }
+    
     private void registerScreenActionReceiver(){  
         final IntentFilter filter = new IntentFilter();  
         filter.addAction(Intent.ACTION_SCREEN_OFF);  
-        filter.addAction(Intent.ACTION_SCREEN_ON);  
+        filter.addAction(Intent.ACTION_USER_PRESENT);  
         registerReceiver(screenStatusReceiver, filter);  
     } 
   
